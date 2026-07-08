@@ -90,8 +90,9 @@ public class SyncCommandHandler
                         return;
                     }
                     
-                    var toPlayList = toPlaylists.FirstOrDefault(playlist => 
-                        string.Equals(playlist.Name, syncConfiguration.ToPlaylistPrefix + fromPlaylist.Name));
+                    var toPlayList = toPlaylists.FirstOrDefault();
+
+                    Console.WriteLine($"To Playlist : '{toPlayList.Name}' ; From Playlist : '{fromPlaylist.Name}'");
 
                     bool isLikePlaylist = string.Equals(fromPlaylist.Name, syncConfiguration.FromLikePlaylistName);
                     bool isRatingPlaylist = string.Equals(fromPlaylist.Id, RatedTracksPlaylistId);
