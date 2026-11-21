@@ -1,9 +1,9 @@
 ﻿FROM mcr.microsoft.com/dotnet/runtime:8.0 AS base
 
-# ca-certs
+# ca-certs, libgssapi-krb5-2 (loaded by Npgsql/System.Net.Security for GSSAPI negotiation)
 USER root
 RUN apt-get update
-RUN apt-get install -y ca-certificates
+RUN apt-get install -y ca-certificates libgssapi-krb5-2
 RUN update-ca-certificates
 
 USER $APP_UID
