@@ -9,7 +9,7 @@ public class PlaylistEntity
     public long Size { get; set; }
     public int SongCount { get; set; }
     public string OwnerName { get; set; }
-    public Guid OwnerId { get; set; }
+    public string OwnerId { get; set; }
     public bool Public { get; set; }
     public string Path { get; set; }
     public bool Sync { get; set; }
